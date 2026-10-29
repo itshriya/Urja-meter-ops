@@ -56,9 +56,23 @@ The portal is treated as a **read-only data source**. This service does not atte
 
 ## Project Structure
 
-```text
-urja-meter-ops/
+urja meter ops/
+├── .DS_Store
+├── .env
+├── .env.example
+├── .git/
+├── .gitignore
+├── .pytest_cache/
+├── __pycache__/
+├── PROTOCOL.md
+├── README.md
+├── openapi.json
+├── pytest.ini
+├── requirements.txt
+├── venv/
 ├── app/
+│   ├── __init__.py
+│   ├── main.py
 │   ├── api/
 │   │   └── dependencies.py
 │   ├── core/
@@ -69,28 +83,28 @@ urja-meter-ops/
 │   │   └── security.py
 │   ├── integrations/
 │   │   └── urja/
+│   │       ├── __init__.py
 │   │       ├── auth.py
+│   │       ├── details.py
 │   │       ├── meters.py
-│   │       └── details.py
+│   │       └── transformers.py
 │   ├── models/
-│   │   ├── meter.py
+│   │   ├── __init__.py
 │   │   ├── meter_details.py
+│   │   ├── meter.py
 │   │   └── transformer.py
-│   ├── routes/
-│   │   ├── meters.py
-│   │   └── transformers.py
-│   └── main.py
-├── tests/
-├── .env.example
-├── .gitignore
-├── openapi.json
-├── PROTOCOL.md
-├── README.md
-├── requirements.txt
-└── pytest.ini
-```
+│   └── routes/
+│       ├── meters.py
+│       └── transformers.py
+└── tests/
+    ├── test_auth_recovery.py
+    ├── test_auth.py
+    ├── test_errors.py
+    ├── test_meter_validation.py
+    ├── test_meters.py
+    ├── test_security.py
+    └── test_transformers.py
 
-*The tree above describes the intended layout. Adjust it to match the files actually committed to the repository.*
 
 ### Architecture
 
@@ -107,7 +121,7 @@ This separation keeps portal-specific details out of the public API layer and ma
 ## Prerequisites
 
 - Python 3.11 or compatible
-- Git
+- Git```
 - Access to the Urja Meter Ops portal
 - Portal credentials supplied for the assignment
 
@@ -115,10 +129,10 @@ This separation keeps portal-specific details out of the public API layer and ma
 
 ### 1. Clone the repository
 
-```bash
+bash
 git clone <YOUR_PUBLIC_GITHUB_REPOSITORY_URL>
 cd <YOUR_REPOSITORY_DIRECTORY>
-```
+
 
 Replace the placeholders with your actual repository URL and directory name.
 
@@ -208,8 +222,8 @@ In production, store credentials and API keys in a secrets manager or protected 
 
 The following endpoints are implemented by the service. Confirm their response schemas and query parameters in the generated OpenAPI documentation before submission.
 
-| Method | Endpoint                          | Purpose                                         |
-| ------ | --------------------------------- | ----------------------------------------------- |
+| Method | Endpoint                          |     Purpose                                         | 
+| ------ | --------------------------------- |---------------------------------------------- |
 | GET    | `/health`                         | Report application and portal-session readiness |
 | GET    | `/meters/search?q=J100000&page=1` | Search for meters                               |
 | GET    | `/meters/{meter_id}/geo`          | Retrieve a meter's coordinates                  |

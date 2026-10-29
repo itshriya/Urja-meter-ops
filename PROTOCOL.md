@@ -16,10 +16,10 @@ The observations below describe the requests and responses observed during devel
 
 The portal uses a login form at:
 
-```http
+http
 GET /login
 POST /login
-```
+
 
 The observed login flow is:
 
