@@ -56,6 +56,7 @@ The portal is treated as a **read-only data source**. This service does not atte
 
 ## Project Structure
 
+text
 urja meter ops/
 ├── .DS_Store
 ├── .env
