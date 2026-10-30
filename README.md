@@ -56,7 +56,7 @@ The portal is treated as a **read-only data source**. This service does not atte
 
 ## Project Structure
 
-text
+```text
 urja meter ops/
 ├── .DS_Store
 ├── .env
@@ -105,7 +105,7 @@ urja meter ops/
     ├── test_meters.py
     ├── test_security.py
     └── test_transformers.py
-
+```
 
 ### Architecture
 
