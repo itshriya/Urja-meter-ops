@@ -224,7 +224,7 @@ These fields suggest a relationship between meters and distribution transformers
 
 However, a complete network hierarchy was not established during the initial investigation. Additional exploration would be needed to determine whether the portal exposes feeder, transformer, and meter relationships consistently and whether the data contains missing or inconsistent references.
 
-The current API should not claim to provide a complete network hierarchy unless that behavior is implemented and verified.
+
 
 ## 5. Wrapper API Versus Portal API
 

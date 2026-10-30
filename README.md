@@ -130,11 +130,10 @@ This separation keeps portal-specific details out of the public API layer and ma
 ### 1. Clone the repository
 
 bash
-git clone <YOUR_PUBLIC_GITHUB_REPOSITORY_URL>
-cd <YOUR_REPOSITORY_DIRECTORY>
+git clone https://github.com/itshriya/Urja-meter-ops
+cd urja meter ops
 
 
-Replace the placeholders with your actual repository URL and directory name.
 
 ### 2. Create and activate a virtual environment
 
@@ -160,8 +159,6 @@ Create a local `.env` file using the example:
 cp .env.example .env
 ```
 
-Update `.env` with your portal credentials and a strong API key.
-
 Example `.env.example`:
 
 ```dotenv
@@ -172,7 +169,7 @@ API_KEY=replace-with-a-strong-random-secret
 PORTAL_TIMEOUT_SECONDS=15
 ```
 
-Ensure these names match the application's configuration in `app/core/config.py`.
+
 
 Generate a random API key with:
 
@@ -405,18 +402,5 @@ During development, I initially encountered an authentication failure because th
 
 I would look closely at how the service handles long-running sessions and changes in the upstream portal. The API-key mechanism is intentionally simple and does not provide full client lifecycle management. I would also want broader integration tests, clearer operational monitoring, and a more explicit data-freshness strategy before treating the service as production-ready.
 
----
 
-## Submission Checklist
 
-Before making the repository public, verify that:
-
-- [ ] The source code and tests are committed.
-- [ ] `README.md` describes installation, configuration, endpoints, decisions, limitations, and reflection.
-- [ ] `PROTOCOL.md` contains observations from your actual portal investigation.
-- [ ] `openapi.json` is valid and describes the wrapper API.
-- [ ] `.env.example` contains placeholders matching the application configuration.
-- [ ] `.env`, credentials, API keys, and session cookies are not committed.
-- [ ] `pytest -v` passes in a clean environment.
-- [ ] The documented commands work when starting from a fresh clone.
-- [ ] The GitHub repository is public and its URL is ready to email to the recruiter.
